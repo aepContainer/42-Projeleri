@@ -38,7 +38,7 @@ char	*get_next_line(int fd);
 char	*get_line_wout(char *lwol);
 char	*get_line_wol(int fd, char *lwol);
 char	*get_buff(char *str);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 char	ctrl_nl(char *str);
 t_ui	ft_strlen_ui(char *str);
 

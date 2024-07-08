@@ -40,7 +40,7 @@ t_ui	ft_strlen_ui(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*rtrn;
 	int		len1;

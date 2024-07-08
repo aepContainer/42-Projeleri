@@ -56,7 +56,7 @@ char	*get_line_wol(int fd, char *lwol)
 		if (!state)
 			break ;
 		buff[state] = 0;
-		lwol = ft_strjoin(lwol, buff);
+		lwol = ft_strjoin_gnl(lwol, buff);
 		if (!lwol)
 			return (free(buff), free(lwol), NULL);
 	}

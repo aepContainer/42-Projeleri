@@ -34,13 +34,14 @@ $(LIBFT):
 	make -s -C $(LIBFT_PATH)
 
 $(AR_NAME): $(LIBFT) $(OBJS) 
-	$(AR) $(AR_NAME) $(OBJS)
+	$(AR) $(AR_NAME) $(OBJS) $(LIBFT_PATH)*.o
 
 bonus:	$(AR_NAME)
 	make -s -C $(CHECKER_PATH)
 
 clean:
 	$(RM) $(OBJS)
+	make -s -C $(LIBFT_PATH) clean
 	make -s -C $(CHECKER_PATH) clean
 
 fclean: clean

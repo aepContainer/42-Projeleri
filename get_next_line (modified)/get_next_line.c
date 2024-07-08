@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "stdlib.h"
 #include "unistd.h"
 
 char	*get_buff(char *str)
@@ -25,7 +24,7 @@ char	*get_buff(char *str)
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	rtrn = (char *) malloc(ft_strlen(str) - i);
+	rtrn = (char *) malloc(ft_strlen_gnl(str) - i);
 	if (!rtrn)
 		return (free(str), NULL);
 	i++;

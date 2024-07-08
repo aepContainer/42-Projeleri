@@ -11,21 +11,20 @@
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include "stdlib.h"
 #include "unistd.h"
 
-char	*get_buff(char *str)
+char	*get_buff_b(char *str)
 {
 	char	*rtrn;
 	t_ui	i;
 	t_ui	j;
 
-	if (!ctrl_nl(str))
+	if (!ctrl_nl_b(str))
 		return (free(str), NULL);
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	rtrn = (char *) malloc(ft_strlen(str) - i);
+	rtrn = (char *) malloc(ft_strlen_b(str) - i);
 	if (!rtrn)
 		return (free(str), NULL);
 	i++;
@@ -37,7 +36,7 @@ char	*get_buff(char *str)
 	return (rtrn);
 }
 
-char	*get_line_wol(int fd, char *lwol)
+char	*get_line_wol_b(int fd, char *lwol)
 {
 	char	*buff;
 	int		state;
@@ -46,7 +45,7 @@ char	*get_line_wol(int fd, char *lwol)
 	if (!buff)
 		return (free(lwol), NULL);
 	state = 1;
-	while (state && !ctrl_nl(lwol))
+	while (state && !ctrl_nl_b(lwol))
 	{
 		state = read(fd, buff, BUFFER_SIZE);
 		if (state == -1)
@@ -54,7 +53,7 @@ char	*get_line_wol(int fd, char *lwol)
 		if (!state)
 			break ;
 		buff[state] = 0;
-		lwol = ft_strjoin(lwol, buff);
+		lwol = ft_strjoin_gnl_b(lwol, buff);
 		if (!lwol)
 			return (free(buff), free(lwol), NULL);
 	}
@@ -62,7 +61,7 @@ char	*get_line_wol(int fd, char *lwol)
 	return (lwol);
 }
 
-char	*get_line_wout(char *lwol)
+char	*get_line_wout_b(char *lwol)
 {
 	char	*rtrn;
 	t_ui	i;
@@ -97,10 +96,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	line_with_ol[fd] = get_line_wol(fd, line_with_ol[fd]);
+	line_with_ol[fd] = get_line_wol_b(fd, line_with_ol[fd]);
 	if (!line_with_ol[fd])
 		return (0);
-	line_wout_ol = get_line_wout(line_with_ol[fd]);
-	line_with_ol[fd] = get_buff(line_with_ol[fd]);
+	line_wout_ol = get_line_wout_b(line_with_ol[fd]);
+	line_with_ol[fd] = get_buff_b(line_with_ol[fd]);
 	return (line_wout_ol);
 }

@@ -13,6 +13,8 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+# include "stdlib.h"
+
 typedef unsigned int	t_ui;
 
 # ifndef BUFFER_SIZE
@@ -25,6 +27,6 @@ char	*get_line_wol(int fd, char *lwol);
 char	*get_buff(char *str);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	ctrl_nl(char *str);
-t_ui	ft_strlen(char *str);
+t_ui	ft_strlen_gnl(char *str);
 
 #endif

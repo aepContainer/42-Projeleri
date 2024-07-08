@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include "stdlib.h"
 
-char	ctrl_nl(char *str)
+char	ctrl_nl_b(char *str)
 {
 	t_ui	i;
 
@@ -26,7 +25,7 @@ char	ctrl_nl(char *str)
 	return (0);
 }
 
-t_ui	ft_strlen(char *str)
+t_ui	ft_strlen_b(char *str)
 {
 	t_ui	i;
 
@@ -38,7 +37,7 @@ t_ui	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin_gnl(char *s1, char *s2)
+char	*ft_strjoin_gnl_b(char *s1, char *s2)
 {
 	char	*rtrn;
 	int		len1;
@@ -51,8 +50,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	}
 	if (!s1 || !s2)
 		return (0);
-	len1 = (int) ft_strlen(s1);
-	len2 = (int) ft_strlen(s2);
+	len1 = (int) ft_strlen_b(s1);
+	len2 = (int) ft_strlen_b(s2);
 	rtrn = malloc(len1 + len2 + 1);
 	if (!rtrn)
 		return (0);

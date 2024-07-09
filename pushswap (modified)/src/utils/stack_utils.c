@@ -90,6 +90,8 @@ t_node	*init_stack_a(char **input)
 	t_node	*rtrn;
 	long	nbr;
 
+	if (!input)
+		return (NULL);
 	rtrn = NULL;
 	while (*input)
 	{

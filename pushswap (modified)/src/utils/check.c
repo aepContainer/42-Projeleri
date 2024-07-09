@@ -115,6 +115,8 @@ char	**create_input(int argc, char **argv)
 	char	**rtrn;
 	int		i;
 
+	if (argc == 2 && !argv[1][0])
+		return (NULL);
 	argv++;
 	argc--;
 	rtrn = NULL;

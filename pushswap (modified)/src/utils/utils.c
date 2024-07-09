@@ -52,6 +52,8 @@ long	ft_atol(const char *str)
 
 	result = 0;
 	sign = 1;
+	if (ft_strlen(str) > 10)
+		return ((long) INT_MAX + 1);
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '+' || *str == '-')

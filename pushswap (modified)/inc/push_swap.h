@@ -44,6 +44,7 @@ void	sort_three(t_node **stack_a);
 void	sort_algorithm(t_node **stack_a);
 
 long	ft_atol(const char *str);
+char	all_space(char **strs);
 char	**parse_input(int argc, char **argv);
 char	**create_input(int argc, char **argv);
 int		char_ptr_len(char **input);

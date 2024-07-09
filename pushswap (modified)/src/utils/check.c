@@ -12,30 +12,6 @@
 
 #include "../../inc/push_swap.h"
 
-char	all_space(char **strs)
-{
-	char	*str;
-	char	state;
-
-	if (!*strs || !**strs)
-		return (free(*strs), free(strs), 1);
-	state = 0;
-	str = *strs;
-	while (*str)
-	{
-		if (*str == 32 || (*str <= 9 && *str >= 13))
-			state = 1;
-		else
-		{
-			state = 0;
-			break;
-		}
-	}
-	if (state)
-		return (free(*strs), free(strs), state);
-	return (state);
-}
-
 int	check_syntax(char *str)
 {
 	if (!str || !*str)
@@ -123,7 +99,7 @@ char	**create_input(int argc, char **argv)
 	rtrn = parse_input(argc, argv);
 	if (!rtrn)
 		exit_with_error();
-	if (all_space(rtrn))
+	if (!*rtrn || !**rtrn)
 		exit_with_error();
 	if (argc == 1)
 		argc = char_ptr_len(rtrn);

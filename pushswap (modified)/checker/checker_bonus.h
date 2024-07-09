@@ -58,5 +58,6 @@ int		check_syntax(char *str);
 void	check_duplicate(t_node **stack_a);
 char	**parse_input(int argc, char **argv);
 char	**create_input(int argc, char **argv);
+char	all_space(char **strs);
 
 #endif

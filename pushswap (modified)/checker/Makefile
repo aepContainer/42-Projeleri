@@ -5,7 +5,7 @@ RM = rm -rf
 LIBFT_PATH = ../libft/
 LIBFT = $(LIBFT_PATH)libft.a
 SRCS = checker_bonus.c utils_bonus.c check.c utils.c free_and_error.c \
-moves/push.c moves/rev_rotate.c moves/rotate.c moves/swap.c
+find_last_node.c moves/push.c moves/rev_rotate.c moves/rotate.c moves/swap.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

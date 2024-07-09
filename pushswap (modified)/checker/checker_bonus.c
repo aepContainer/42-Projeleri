@@ -22,8 +22,10 @@ int	main(int argc, char **argv)
 		return (-1);
 	input = create_input(argc, argv);
 	stack_a = init_stack_a(input);
-	free_input(input);
-	check_duplicate(&stack_a);
+	if (input)
+		free_input(input);
+	if (stack_a)
+		check_duplicate(&stack_a);
 	if (stack_a && stack_sorted(stack_a) <= 0)
 	{
 		sort_by_input(&stack_a);

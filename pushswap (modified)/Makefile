@@ -24,7 +24,7 @@ $(LIBFT):
 $(AR_NAME): $(LIBFT) $(OBJS) 
 	$(AR) $(AR_NAME) $(OBJS) $(LIBFT_PATH)*.o
 
-bonus:	$(AR_NAME)
+bonus: $(LIBFT) $(AR_NAME)
 	make -s -C $(CHECKER_PATH)
 
 clean:

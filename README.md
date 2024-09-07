@@ -2,4 +2,6 @@
 İsminin sonunda "(modified)" yazan projeler aynı projelerin düzenlenmiş halleridir.  
   
 _(modified) dosyalarında azaltılabildiği kadar satır sayısı azaltıldı..  
-_"pushswap (repo)" dosyasında bonus olan checker düzgün çalışmıyor fakat "pushswap (modified)" dosyasında düzeltildi.
+_"pushswap (repo)" dosyasında bonus olan checker düzgün çalışmıyor fakat "pushswap (modified)" dosyasında düzeltildi.  
+  
+README Henüz Tamamlanmadı, Tamamlanacak.

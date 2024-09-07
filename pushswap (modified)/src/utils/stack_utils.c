@@ -66,13 +66,17 @@ int	append_node(t_node **stack, int nbr)
 
 void	set_index_and_median(t_node *node)
 {
-	int	i;
 	int	median;
+	int	len;
+	int	i;
 
 	i = 0;
 	if (!node)
 		return ;
-	median = get_stack_len(node) / 2;
+	len = get_stack_len(node);
+	median = len / 2;
+	if (len == 2)
+		median = 0;
 	while (node)
 	{
 		node->index = i;

@@ -66,6 +66,25 @@ void	move_a_to_b(t_node **stack_a, t_node **stack_b)
 	t_node	*cheapest_node;
 
 	cheapest_node = get_cheapest_node(*stack_a, *stack_b);
+	t_node	*temp;
+	int i = 0;
+	temp = *stack_a;
+	while (temp)
+	{
+		ft_printf("a[%d] : %d\ta[%d].target : %d \t", i, temp->nbr, i, temp->target->nbr);
+		ft_printf("a[%d].is_above_median : %d\ta[%d].cost : %d\n", i, temp->is_above_median, i, temp->cost);
+		temp = temp->next;
+		i++;
+	}
+	ft_printf("\n");
+	temp = *stack_b;
+	i = 0;
+	while (temp)
+	{
+		ft_printf("b[%d] : %d\tb[%d].index : %d\tb[%d].is_above_median : %d\n", i, temp->nbr, i, temp->index, i,  temp->is_above_median);
+		temp = temp->next;
+		i++;
+	}
 	if (cheapest_node->is_above_median
 		&& cheapest_node->target->is_above_median)
 		while (*stack_b != cheapest_node->target

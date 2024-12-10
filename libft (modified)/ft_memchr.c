@@ -17,10 +17,12 @@ void	*ft_memchr(const void *s, int c, size_t len)
 	t_uc	*cpys;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	cpys = (t_uc *) s;
 	i = -1;
 	while (++i < len)
 		if (cpys[i] == (t_uc) c)
 			return ((void *)(cpys + i));
-	return (0);
+	return (NULL);
 }

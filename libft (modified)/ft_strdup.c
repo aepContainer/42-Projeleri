@@ -12,15 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *s)
 {
 	char	*rtrn;
 	size_t	lens1;
 
-	lens1 = ft_strlen(s1);
+	if (!s)
+		return (NULL);
+	lens1 = ft_strlen(s);
 	rtrn = (char *) malloc(lens1 + 1);
 	if (!rtrn)
 		return (NULL);
-	rtrn = (char *) ft_memmove(rtrn, s1, lens1 + 1);
+	rtrn = (char *) ft_memmove(rtrn, s, lens1 + 1);
 	return (rtrn);
 }

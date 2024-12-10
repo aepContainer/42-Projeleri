@@ -17,6 +17,8 @@ void	ft_bzero(void *s, size_t n)
 	char	*cpys;
 	size_t	i;
 
+	if (!s)
+		return ;
 	cpys = (char *) s;
 	i = -1;
 	while (++i < n)

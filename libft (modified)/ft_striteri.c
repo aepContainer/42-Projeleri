@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(t_ui, char *))
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = -1;
 	while (s[++i])
 		f((t_ui) i, &s[i]);

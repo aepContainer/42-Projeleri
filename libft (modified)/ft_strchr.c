@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define NULL (void *) 0
+
 char	*ft_strchr(const char *s, int c)
 {
 	char	*rtrn;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	rtrn = (char *) s;
 	i = -1;
 	while (rtrn[++i])
@@ -22,5 +26,5 @@ char	*ft_strchr(const char *s, int c)
 			return (rtrn + i);
 	if (rtrn[i] == (char) c)
 		return (rtrn + i);
-	return ((void *)0);
+	return (NULL);
 }

@@ -23,6 +23,8 @@ int	ft_atoi(const char *str)
 	short	sign;
 	size_t	i;
 
+	if (!str)
+		return (0);
 	rtrn = 0;
 	sign = 1;
 	i = 0;

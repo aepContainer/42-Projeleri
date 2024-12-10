@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, t_ui start, size_t len)
 	size_t	i;
 	size_t	cpystart;
 
+	if (!s)
+		return (NULL);
 	i = ft_strlen(s);
 	cpystart = (size_t) start;
 	if (!s)

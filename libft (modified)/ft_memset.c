@@ -17,6 +17,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	t_uc	*cpyb;
 	size_t	i;
 
+	if (!b)
+		return (NULL);
 	cpyb = (t_uc *) b;
 	i = -1;
 	while (++i < len)

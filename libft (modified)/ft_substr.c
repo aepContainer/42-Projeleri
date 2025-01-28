@@ -22,8 +22,6 @@ char	*ft_substr(char const *s, t_ui start, size_t len)
 		return (NULL);
 	i = ft_strlen(s);
 	cpystart = (size_t) start;
-	if (!s)
-		return (NULL);
 	if (i < cpystart)
 		return (ft_strdup(""));
 	if (i - cpystart < len)
@@ -37,6 +35,8 @@ char	*ft_substr(char const *s, t_ui start, size_t len)
 		rtrn[i] = s[cpystart];
 		cpystart++;
 	}
+	if (!s[cpystart])
+		i++;
 	rtrn[i] = 0;
 	return (rtrn);
 }
